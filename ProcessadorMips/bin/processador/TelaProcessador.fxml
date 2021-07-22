@@ -32,7 +32,7 @@
          <children>
             <ImageView fitHeight="100.0" fitWidth="200.0" layoutX="-54.0" layoutY="68.0" rotate="90.0">
                <image>
-                  <Image url="file:MipsSimulator//ProcessadorMips//imagens//flecha%20gif.gif" />
+                  <Image url="file:///C:/Users/Cassio/Desktop/MipsSimulator/ProcessadorMips/imagens/flecha%20gif.gif" />
                </image>
                <rotationAxis>
                   <Point3D z="-5.0" />
