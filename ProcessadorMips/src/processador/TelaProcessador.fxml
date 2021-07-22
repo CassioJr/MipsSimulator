@@ -109,12 +109,12 @@
             </Label>
             <ImageView fitHeight="34.0" fitWidth="53.0" layoutY="42.0">
                <image>
-                  <Image url="@../../../../1830-vega-right-arrow.gif" />
+                  <Image url="file:///C:/Users/danie/Desktop/Arquitetura e Organização de Computadores/MipsSimulator/ProcessadorMips/imagens/1830-vega-right-arrow.gif" />
                </image>
             </ImageView>
             <ImageView fitHeight="34.0" fitWidth="53.0" layoutY="130.0">
                <image>
-                  <Image url="@../../../../1830-vega-right-arrow.gif" />
+                  <Image url="file:///C:/Users/danie/Desktop/Arquitetura e Organização de Computadores/MipsSimulator/ProcessadorMips/imagens/1830-vega-right-arrow.gif" />
                </image>
             </ImageView>
          </children>
