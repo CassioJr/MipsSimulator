@@ -6,21 +6,26 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Text?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="398.0" prefWidth="655.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="processador.processadorController">
    <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#6cafee" height="113.0" layoutY="-4.0" stroke="BLACK" strokeType="INSIDE" width="655.0" />
       <Line endX="539.9999389648438" endY="7.62939453125E-6" layoutX="115.0" layoutY="110.0" startX="-121.30715942382812" startY="7.62939453125E-6" />
-      <TextField fx:id="n1" layoutX="62.0" layoutY="62.0" />
-      <TextField fx:id="n2" layoutX="258.0" layoutY="61.0" prefHeight="26.0" prefWidth="159.0" />
-      <Text layoutX="110.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Numero 1" />
-      <Text layoutX="311.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Numero 2" />
-      <Label fx:id="resultado" layoutX="517.0" layoutY="74.0" text="Label" />
-      <Text layoutX="476.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Resultado da soma é" />
+      <TextField fx:id="n1" layoutX="62.0" layoutY="27.0" />
+      <TextField fx:id="n2" layoutX="58.0" layoutY="73.0" prefHeight="26.0" prefWidth="159.0" />
+      <Text layoutX="110.0" layoutY="22.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Numero 1" />
+      <Text layoutX="111.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Numero 2" />
+      <Label fx:id="resultado" layoutX="521.0" layoutY="72.0" text="Label" />
+      <Text layoutX="466.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Resultado da operação é" />
       <Button layoutX="587.0" layoutY="359.0" mnemonicParsing="false" onAction="#acaobotao" text="Next" />
       <Circle fx:id="p" fill="DODGERBLUE" layoutX="87.0" layoutY="196.0" radius="50.0" stroke="BLACK" strokeType="INSIDE" visible="false" />
       <Circle fx:id="s" fill="DODGERBLUE" layoutX="447.0" layoutY="196.0" radius="30.0" stroke="BLACK" strokeType="INSIDE" visible="false" />
       <Line fx:id="bet" endX="362.70001220703125" layoutX="87.0" layoutY="199.0" startX="33.09999084472656" visible="false" />
-      <Button layoutX="11.0" layoutY="79.0" mnemonicParsing="false" onAction="#soma" text="Button" />
+      <Button layoutX="266.0" layoutY="32.0" mnemonicParsing="false" onAction="#soma" prefHeight="25.0" prefWidth="46.0" text="Soma" />
+      <Button layoutX="353.0" layoutY="32.0" mnemonicParsing="false" onAction="#sub" prefWidth="46.0" text="Sub" />
+      <Button layoutX="264.0" layoutY="73.0" mnemonicParsing="false" onAction="#mult" prefHeight="25.0" prefWidth="46.0" text="Mult" />
+      <Button layoutX="354.0" layoutY="73.0" mnemonicParsing="false" onAction="#div" prefWidth="46.0" text="Div" />
    </children>
 </AnchorPane>
