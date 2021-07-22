@@ -21,7 +21,7 @@
       <TextField fx:id="n2" layoutX="24.0" layoutY="82.0" prefHeight="26.0" prefWidth="109.0" />
       <Text layoutX="56.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Numero 1" />
       <Text layoutX="58.0" layoutY="77.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Numero 2" />
-      <Label fx:id="resultado" layoutX="521.0" layoutY="72.0" text="Label" />
+      <Label fx:id="resultado" layoutX="521.0" layoutY="72.0" />
       <Text layoutX="466.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Resultado da operação é" />
       <Button layoutX="165.0" layoutY="51.0" mnemonicParsing="false" onAction="#acaobotao" text="Registro" />
       <Button layoutX="266.0" layoutY="32.0" mnemonicParsing="false" onAction="#soma" prefHeight="25.0" prefWidth="46.0" text="Soma" />
@@ -93,10 +93,10 @@
             </Label>
          </children>
       </Pane>
-      <Pane layoutX="400.0" layoutY="155.0" prefHeight="200.0" prefWidth="221.0" visible="false">
+      <Pane fx:id="f" layoutX="400.0" layoutY="155.0" prefHeight="200.0" prefWidth="221.0" visible="false">
          <children>
-            <Rectangle fx:id="k" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="53.0" layoutX="51.0" layoutY="118.0" stroke="BLACK" strokeType="INSIDE" width="149.0" />
-            <Rectangle fx:id="t" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="53.0" layoutX="51.0" layoutY="32.0" stroke="BLACK" strokeType="INSIDE" width="149.0" />
+            <Rectangle fx:id="k" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="53.0" layoutX="59.0" layoutY="121.0" stroke="BLACK" strokeType="INSIDE" width="149.0" />
+            <Rectangle fx:id="t" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="53.0" layoutX="59.0" layoutY="32.0" stroke="BLACK" strokeType="INSIDE" width="149.0" />
             <Label layoutX="88.0" layoutY="45.0" text="Resultado">
                <font>
                   <Font size="18.0" />
@@ -107,7 +107,18 @@
                   <Font size="18.0" />
                </font>
             </Label>
+            <ImageView fitHeight="34.0" fitWidth="53.0" layoutY="42.0">
+               <image>
+                  <Image url="@../../../../1830-vega-right-arrow.gif" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="34.0" fitWidth="53.0" layoutY="130.0">
+               <image>
+                  <Image url="@../../../../1830-vega-right-arrow.gif" />
+               </image>
+            </ImageView>
          </children>
       </Pane>
+      <Button layoutX="387.0" layoutY="51.0" mnemonicParsing="false" onAction="#result" text="Resultado" />
    </children>
 </AnchorPane>
