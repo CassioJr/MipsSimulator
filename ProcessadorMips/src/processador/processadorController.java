@@ -3,8 +3,8 @@ package processador;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.scene.shape.Circle;
-import javafx.scene.shape.Line;
+import javafx.scene.layout.Pane;
+import javafx.scene.shape.Rectangle;
 
 public class processadorController {
 	@FXML
@@ -14,11 +14,10 @@ public class processadorController {
 	@FXML
 	private Label resultado;
 	@FXML
-	private Circle p;
+	private Rectangle p,s,b,e,t,k;
 	@FXML
-	private Circle s;
-	@FXML
-	private Line bet;
+	private Pane r ,c;
+	
 	
 	public void soma() {
 		int result,num1,num2;
@@ -26,6 +25,8 @@ public class processadorController {
 		num2 = Integer.parseInt(n2.getText());
 		result = num1+num2;
 		resultado.setText(String.valueOf(result));
+		c.setVisible(true);
+		
 	}
 	
 	public void sub() {
@@ -34,6 +35,7 @@ public class processadorController {
 		num2 = Integer.parseInt(n2.getText());
 		result = num1-num2;
 		resultado.setText(String.valueOf(result));
+		c.setVisible(true);
 	}
 	
 	public void mult() {
@@ -42,6 +44,7 @@ public class processadorController {
 		num2 = Integer.parseInt(n2.getText());
 		result = num1*num2;
 		resultado.setText(String.valueOf(result));
+		c.setVisible(true);
 	}
 	
 	public void div() {
@@ -50,11 +53,11 @@ public class processadorController {
 		num2 = Integer.parseInt(n2.getText());
 		result = num1/num2;
 		resultado.setText(String.valueOf(result));
+		c.setVisible(true);
 	}
 	public void acaobotao() {
-		p.setVisible(true);
-		s.setVisible(true);
-		bet.setVisible(true);
+		r.setVisible(true);
+		
 	}
 	
 }
