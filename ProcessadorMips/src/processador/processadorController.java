@@ -17,13 +17,13 @@ public class processadorController {
 	private Rectangle p,s,b,e,t,k;
 	@FXML
 	private Pane r ,c,f;
-	int result;
+	int resultadoFinal;
 	
 	public void soma() {
 		int result,num1,num2;
 		num1 = Integer.parseInt(n1.getText());
 		num2 = Integer.parseInt(n2.getText());
-		result = num1+num2;
+		resultadoFinal = num1+num2;
 		c.setVisible(true);
 		
 	}
@@ -32,7 +32,7 @@ public class processadorController {
 		int result,num1,num2;
 		num1 = Integer.parseInt(n1.getText());
 		num2 = Integer.parseInt(n2.getText());
-		result = num1-num2;
+		resultadoFinal = num1-num2;
 		c.setVisible(true);
 	}
 	
@@ -40,7 +40,7 @@ public class processadorController {
 		int result,num1,num2;
 		num1 = Integer.parseInt(n1.getText());
 		num2 = Integer.parseInt(n2.getText());
-		result = num1*num2;
+		resultadoFinal = num1*num2;
 		c.setVisible(true);
 	}
 	
@@ -48,7 +48,7 @@ public class processadorController {
 		int result,num1,num2;
 		num1 = Integer.parseInt(n1.getText());
 		num2 = Integer.parseInt(n2.getText());
-		result = num1/num2;
+		resultadoFinal = num1/num2;
 		c.setVisible(true);
 	}
 	public void acaobotao() {
@@ -57,7 +57,7 @@ public class processadorController {
 	}
 	public void result() {
 		f.setVisible(true);
-		resultado.setText(String.valueOf(result));
+		resultado.setText(String.valueOf(resultadoFinal));
 	}
 	
 }
