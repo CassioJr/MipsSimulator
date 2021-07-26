@@ -23,7 +23,7 @@ public class processadorController {
 	
 	public void soma() {
 		try {
-		int result,num1,num2;
+		int num1,num2;
 		num1 = Integer.parseInt(n1.getText());
 		num2 = Integer.parseInt(n2.getText());
 		resultadoFinal = num1+num2;
