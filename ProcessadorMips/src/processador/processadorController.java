@@ -5,10 +5,13 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 import javafx.scene.shape.Rectangle;
 
 public class processadorController {
+	@FXML
+	private ImageView redArrow,blueArrow,blueArrow2,blueArrow3,purpleArrow,purpleArrow2,brownArrow;
 	@FXML
 	private TextField n1;
 	@FXML
@@ -20,14 +23,26 @@ public class processadorController {
 	@FXML
 	private Pane r ,c,f;
 	int resultadoFinal;
-	
+	public void resetaFlechas() {
+		redArrow.setVisible(false);
+		blueArrow.setVisible(false);
+		blueArrow2.setVisible(false);
+		blueArrow3.setVisible(false);
+		purpleArrow.setVisible(false);
+		purpleArrow2.setVisible(false);
+		brownArrow.setVisible(false);
+	}
 	public void soma() {
 		try {
+		resetaFlechas();
 		int num1,num2;
 		num1 = Integer.parseInt(n1.getText());
 		num2 = Integer.parseInt(n2.getText());
 		resultadoFinal = num1+num2;
 		c.setVisible(true);
+		blueArrow.setVisible(true);
+		blueArrow2.setVisible(true);
+		blueArrow3.setVisible(true);
 		}catch(Exception e) {
 			MSA("Digite algum numero para Somar!");
 		}
@@ -35,11 +50,13 @@ public class processadorController {
 	
 	public void sub() {
 		try {
-		int result,num1,num2;
+		resetaFlechas();
+		int num1,num2;
 		num1 = Integer.parseInt(n1.getText());
 		num2 = Integer.parseInt(n2.getText());
 		resultadoFinal = num1-num2;
 		c.setVisible(true);
+		redArrow.setVisible(true);
 		}catch(Exception e) {
 			MSA("Digite algum numero para Subtrair!");
 		}
@@ -47,11 +64,14 @@ public class processadorController {
 	
 	public void mult() {
 		try {
-		int result,num1,num2;
+		resetaFlechas();
+		int num1,num2;
 		num1 = Integer.parseInt(n1.getText());
 		num2 = Integer.parseInt(n2.getText());
 		resultadoFinal = num1*num2;
 		c.setVisible(true);
+		purpleArrow.setVisible(true);
+		purpleArrow2.setVisible(true);
 		}catch(Exception e) {
 			MSA("Digite algum numero para Multiplicar!");
 		}
@@ -59,11 +79,13 @@ public class processadorController {
 	
 	public void div() {
 		try {
-		int result,num1,num2;
+		resetaFlechas();
+		int num1,num2;
 		num1 = Integer.parseInt(n1.getText());
 		num2 = Integer.parseInt(n2.getText());
 		resultadoFinal = num1/num2;
 		c.setVisible(true);
+		brownArrow.setVisible(true);
 		}catch(Exception e) {
 			MSA("Digite algum numero para Dividir!");
 		}
