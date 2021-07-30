@@ -69,7 +69,13 @@ public class processadorController {
 		}
 	}
 	public void acaobotao() {
-		r.setVisible(true);
+		try {
+			
+			r.setVisible(true);
+			}catch(Exception e) {
+				MSA("Digite algum numero para Dividir!");
+			}
+	
 		
 	}
 	public void result() {
