@@ -2,7 +2,7 @@ package processador;
 
 import java.util.*;
 public class ULA {
-    public int Zero = 0; //uma das saidas da ula,se for beq,PCSrc manda sinal p c√°
+    public int Zero = 0; //uma das saidas da ula,se for beq,PCSrc manda sinal para ca°
 
     public ULA(){
 
@@ -65,7 +65,7 @@ public class ULA {
             case 5: return sll(a,b);
             case 6: return sub(a,b);
             case 7: return div(a,b);
-            default: System.out.println("Opera√ß√£o inv√°lida da ULA"); return -1;
+            default: System.out.println("OperaÁ„o invalida da ULA"); return -1;
         }
 
     }

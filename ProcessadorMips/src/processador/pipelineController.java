@@ -6,6 +6,7 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.Reader;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -24,11 +25,8 @@ public class pipelineController {
 	
 	Registradores getRegistradores ;
 	Memoria getMemoria;
-	
-	
-
     @FXML
-    private ListView<String>l1, l2, l3;
+    private ListView<String> l1,l2,l3;
 
     @FXML
     void carrega(ActionEvent event) {
@@ -38,26 +36,27 @@ public class pipelineController {
 			fc.setTitle("Escolha um arquivo mips");
 			fc.getExtensionFilters().add(new FileChooser.ExtensionFilter("MIPS", "*.mips*"));
 			File file = fc.showOpenDialog(null);
-			
-		if (file != null) {
-				
-          l1.getItems().addAll(BlocoControle.getInstance().toString());
-		}
-		}catch(Exception e) {
+			 FileReader arq = new FileReader(file.getAbsolutePath());
+	         BufferedReader lerArq = new BufferedReader(arq);
+	         if(file!=null) {
+	        	 while(lerArq.ready()) {
+	        	 String linha = lerArq.readLine();
+	        	l1.getItems().addAll(linha);
+	        	 }
+	        	 }
+    	}catch(Exception e) {
 			MSA("Arquivo Invalido");
 		}
     	}
 
     @FXML
     void executa(ActionEvent event) {
-   
+    	try {
     	 l2.getItems().addAll(Registradores.getInstance().toString());
     	 l3.getItems().addAll(Memoria.getInstance().toString());
-    	
-
-		
-    	
-    	
+    	}catch(Exception e) {
+    		MSA("Escolha um arquivo para executar");
+    	}
     }
     
     @FXML
@@ -68,10 +67,10 @@ public class pipelineController {
 
     }
     
-    public void MSA (String k){
+    public static void MSA (String msg){
 		Alert alert = new Alert (AlertType.WARNING);
-		alert.setTitle("AtenÃ§Ã£o");
-		alert.setContentText(k);
+		alert.setTitle("Atenção");
+		alert.setContentText(msg);
 		alert.setHeaderText(null);
 		alert.showAndWait();
 		
@@ -79,7 +78,7 @@ public class pipelineController {
     public static int Mux(int ent0, int ent1, int op){
         if(op == 0){return ent0;}
         if(op == 1){return ent1;}
-        System.out.println("Erro na operaÃ§Ã£o de controle do Mux!!!");
+        MSA("Erro na operações de controle do Mux!!!");
         return -1;
     }
 
@@ -104,7 +103,7 @@ public class pipelineController {
         String [] code = linhas.substring(comeco, fim).trim().split("\n");
         String ajuste;
         List<String> listCode = new ArrayList<String>(Arrays.asList(code));
-
+        ArrayList<String> recebe = new ArrayList();
         // Para retirar os vetores em branco
         while(listCode.contains("")){
             listCode.remove("");
@@ -112,7 +111,7 @@ public class pipelineController {
 
 
 
-        // Esse for Ã© colocar a label na mesma linha do codigo
+        // Esse for ao colocar a label na mesma linha do codigo
         for(int i = 0; i<listCode.size();i++){
             if(listCode.get(i).charAt(listCode.get(i).length()-1) == ':'){
                 ajuste = listCode.remove(i).trim().replace(":", "") + " " +listCode.remove(i).trim();
@@ -124,8 +123,9 @@ public class pipelineController {
         return listCode;
     }
     
-    public static void Ex () {
+    public void Ex () {
     	 List<String> code = new ArrayList<String>();
+    	 ArrayList<String> recebe = new ArrayList();
     	 
          String linhas = "";
          Registradores blreg = Registradores.getInstance();
@@ -135,12 +135,11 @@ public class pipelineController {
          ULA fullAdder = new ULA();
 
          code = getCodigo(linhas);
-
          Decoder dec = new Decoder(code);
-
-         String [] memoriaIntrucao = dec.decoder(); // Isso sÃ£o todas as instruÃ§oes do codigo em binario
-         String [] instHex = dec.decoderHex(); // Isso Ã© todas as instruÃ§oes do codigo em hexa
-
+         
+         String [] memoriaIntrucao = dec.decoder(); // Isso são todas as instruçoes do codigo em binario
+         String [] instHex = dec.decoderHex(); // Isso são todas as instruçoes do codigo em hexa
+        
          int pc = 1280;
          while(true){
          
@@ -152,6 +151,7 @@ public class pipelineController {
              for(int i = 0;i<code.size();i++){
                  System.out.print(instHex[i]+"   ");
                  System.out.print("   "+code.get(i));
+                 recebe.add(code.get(i));
                  if(i == pcReal){
                      System.out.print("  <--\n");
                  }else {System.out.print("\n");}
@@ -177,8 +177,7 @@ public class pipelineController {
              blreg.busca(reg2Toreg2, regDois, saidaMux, blcontrol.regWrite);
              saidaMux = BlocoControle.aluOp2Mux(blreg.saida2(), immediate, blcontrol.aluSrc);
              saidaMux = BlocoControle.shiftControlMux(saidaMux, shiftNumber , blcontrol.shamt);
-
-
+             
              //pc++
              pc = fullAdder.saida(pc, 4, 2);
 
@@ -198,17 +197,9 @@ public class pipelineController {
 
              int saidaMemoria = mem.entradas(saidaULA, blreg.saida2(), blcontrol.memRead, blcontrol.memWrite);
              int memToReg = BlocoControle.memToRegMux(saidaULA, saidaMemoria, blcontrol.memToReg);
-
              blreg.writeBack(memToReg);
-             System.out.println(blreg.toString()+"\n"+mem.toString());
-             
-             Scanner teclado = new Scanner(System.in);
-             String para = teclado.next();
-             for(int i = 0;i<7;i++){
-                 System.out.println("\r");
              }
 
-         }
+        
     }
-
 }

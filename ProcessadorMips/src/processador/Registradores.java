@@ -16,9 +16,7 @@ public class Registradores{
     }
 
     private Registradores(){
-        /* Preencher essa aqui no contrutor o dicionario com todos so registradores zerados
-         *  Usando for mesmo, n√£o fiz ainda pq estou sem saco no momento
-         */
+
         registers = new HashMap<Integer,Integer>();
         for(int i = 0; i<32;i++){
             registers.put(i, 0);
@@ -30,8 +28,7 @@ public class Registradores{
     }
 
     public void busca(int f, int s, int write, int controlData){
-        /* Eu criei um dicionario para ser o banco de registradores, acho que assim vai ser mais
-         * facil de trabalhar, aqui √© para definir qual conteudo √© para pegar no registrador
+        /* Aqui È para definir qual conteudo È para pegar no registrador
          */
         data1 = registers.get(f);
         data2 = registers.get(s);

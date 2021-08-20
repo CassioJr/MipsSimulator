@@ -27,9 +27,6 @@ public class BlocoControle{
     public static BlocoControle getInstance(){
         return INSTANCE;
     }
-
-    //Teria como já começar com isso inicializado? Em tese só vai ter uma instância dessa classe.
-
     // opcode[6]
     public void controlByOpCode (String opCode) {
 
@@ -113,7 +110,7 @@ public class BlocoControle{
 
         }
 
-        //Ori - Usa o aluOp0/1 com 11, vai ser usado para passar uma instrução or para a ULA
+        //Ori - Usa o aluOp0/1 com 11, vai ser usado para passar uma instru��o or para a ULA
         if (opCode.equals("001101")) {
 
             regWrite = 1;
@@ -147,7 +144,7 @@ public class BlocoControle{
 
         }
 
-        //Lui - Sinal de controle lui criado para passar a instrução sll para a ULA.
+        //Lui - Sinal de controle lui criado para passar a instru��o sll para a ULA.
         if (opCode.equals("001111")) {
             
             regWrite = 1;
@@ -166,7 +163,7 @@ public class BlocoControle{
 
     }
 
-    //Funções diferentes para MUXs diferentes. Terceiro parâmetro já indica o(s) sinal(is) de controle a ser(em) usado(s).
+    //Fun��es diferentes para MUXs diferentes. Terceiro parametro ja indica o(s) sinal(is) de controle a ser(em) usado(s).
     public static int writeRegMux(int ent0, int ent1, int regDst){
         if(regDst == 0){return ent0;}
         if(regDst == 1){return ent1;}
@@ -196,8 +193,8 @@ public class BlocoControle{
         return -1;
     }
 
-    //Define a operação da ULA com base nos inputs de controle. Retorna operação conforme códigos do switch do ULA.java
-    // funct[6]
+    //Define a opera��es da ULA com base nos inputs de controle. Retorna opera��o conforme codigos do switch do ULA.java
+    // function
     public int ulaControl(int ulaOp0, int ulaOp1, int lui, String funct){
         if(lui == 1){
             shamt = 2;

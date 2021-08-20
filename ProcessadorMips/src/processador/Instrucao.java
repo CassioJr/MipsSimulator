@@ -1,6 +1,6 @@
 package processador;
 
-//Essa classe salva a instruÃ§Ã£o em seus formatos possÃ­veis, para utilizaÃ§Ã£o na execuÃ§Ã£o.
+//Essa classe salva a instrução em seus formatos possÃ­veis, para utilização na execução.
 public class Instrucao {
 
     String[] /*[32]*/ bits;
