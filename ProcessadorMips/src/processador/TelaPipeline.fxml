@@ -9,11 +9,6 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1048.0" style="-fx-background-color: #6cafee;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="processador.pipelineController">
    <children>
-      <ImageView fitHeight="369.0" fitWidth="1056.0" layoutX="-6.0" layoutY="233.0">
-         <image>
-            <Image url="@../../../../imagens/Figura-4-Caminho-de-dados-da-arquitetura-MIPS-Monociclo.ppm" />
-         </image>
-      </ImageView>
       <Button layoutX="8.0" layoutY="66.0" mnemonicParsing="false" onAction="#carrega" prefHeight="44.0" prefWidth="114.0" text="Carregar" />
       <Line endX="924.0" endY="-10.0" layoutX="124.0" layoutY="243.0" startX="-124.0" startY="-10.0" />
       <Button layoutX="8.0" layoutY="120.0" mnemonicParsing="false" onAction="#executa" prefHeight="44.0" prefWidth="114.0" text="Executar" />
@@ -21,5 +16,10 @@
       <ListView fx:id="l3" layoutX="745.0" layoutY="7.0" prefHeight="220.0" prefWidth="290.0" />
       <ListView fx:id="l1" layoutX="137.0" layoutY="7.0" prefHeight="220.0" prefWidth="290.0" />
       <Button layoutX="8.0" layoutY="175.0" mnemonicParsing="false" onAction="#limpa" prefHeight="44.0" prefWidth="114.0" text="Limpa Listas" />
+      <ImageView fitHeight="371.0" fitWidth="1049.0" layoutY="233.0">
+         <image>
+            <Image url="@../../../imagens/pipeline-da-arquitetura-MIPS.ppm" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>
