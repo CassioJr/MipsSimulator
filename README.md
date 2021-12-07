@@ -9,7 +9,7 @@ Implementação de um simulador mips para a disciplina de Arquitetura e Organiza
 
 ### Como rodar o aplicativo:
 
-É possivel rodar pela propia IDE da sua escolhe rodando a main presente no projeto, mas também pode ser executado direto pelo cmd caso prefira.
+É possivel rodar pela própia IDE da sua escolhe rodando a main presente no projeto, mas também pode ser executado direto pelo cmd caso prefira.
 
 Caso opte utilizar o cmd você deve copiar e colar o comando abaixo:  
 
