@@ -9,7 +9,13 @@ Implementação de um simulador mips para a disciplina de Arquitetura e Organiza
 
 ### Como rodar o aplicativo:
 
-É possivel rodar pela propia IDE da sua escolhe rodando a main presente no projeto, mas também pode ser executado direto pelo exe.jar presente nos arquivos do projeto.
+É possivel rodar pela propia IDE da sua escolhe rodando a main presente no projeto, mas também pode ser executado direto pelo cmd caso prefira.
+
+Caso opte utilizar o cmd você deve copiar e colar o comando abaixo:  
+
+```Shell
+java --module-path "Caminho da lib do javaFX" --add-modules javafx.controls,javafx.fxml -jar c:/pastaExemplo/jarDoPrograma
+```
 
 ### Autores do projeto: 
 
